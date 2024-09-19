@@ -1,22 +1,21 @@
 const nodemailer = require("nodemailer");
-// Import NodeMailer (after npm install)
+// Import NodeMailer 
 
 async function main() {
-// Async function enables allows handling of promises with await
 
-  // First, define send settings by creating a new transporter: 
+
+  
   let transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com", // SMTP server address (usually mail.your-domain.com)
-    port: 465, // Port for SMTP (usually 465)
-    secure: true, // Usually true if connecting to port 465
+    host: "smtp.gmail.com", // SMTP server address 
+    port: 465, 
+    secure: true, 
     auth: {
       user: 'labslexo@gmail.com', // Your email address
-      pass: 'evzq yynz znvo rvss', // Password (for gmail, your app password)
-      // ⚠️ For better security, use environment variables set on the server for these values when deploying
+      pass: 'pass', // Password (for gmail, your app password) will use .env later
     },
   });
   
-  // Define and send message inside transporter.sendEmail() and await info about send from promise:
+  // Define and send message inside transporter.sendEmail()
   let info = await transporter.sendMail({
     from: 'labslexo@gmail.com',
     to: "somitshaw1999@gmail.com",
